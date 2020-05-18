@@ -6,12 +6,10 @@ import PageNotFound from "../../screens/PageNotFound";
 import Home from "../../screens/Home";
 
 const RoutesAuth : FunctionComponent = () => {
-    return <BrowserRouter>
-        <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="*" component={PageNotFound} />
-        </Switch>
-    </BrowserRouter> 
+    return <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="*" component={PageNotFound} />
+    </Switch>
 }
 
 export default RoutesAuth;

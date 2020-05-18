@@ -1,30 +1,35 @@
 import React from "react";
-import { FaAddressBook, FaAccusoft } from "react-icons/fa";
+import { AiOutlineHome , AiOutlineTable } from "react-icons/ai";
+import { TiCogOutline } from "react-icons/ti";
 import { Ilist } from "../interfaces";
 
 const configSideBar : Ilist[] = [
     {
         type : "normal",
-        icon : <FaAddressBook />,
-        title : "Template 1"
+        icon : <AiOutlineHome />,
+        title : "Inicio",
+        link : "/"
     },
     {
         type : "normal",
-        icon : <FaAddressBook />,
-        title : "Template 2"
+        icon : <TiCogOutline />,
+        title : "Configuracion",
+        link : ""
     },
     {
         type : "multiple",
-        icon : <FaAddressBook />,
-        title : "Template Multiple",
+        icon : <AiOutlineTable />,
+        title : "Tablas",
         subitems : [
             {
-                icon : <FaAccusoft />,
-                title : "Table a"
+                icon : <AiOutlineTable />,
+                title : "Table a",
+                link : "/"
             },
             {
-                icon : <FaAccusoft />,
-                title : "Table b"
+                icon : <AiOutlineTable />,
+                title : "Table b",
+                link : "/"
             }
         ]
     }

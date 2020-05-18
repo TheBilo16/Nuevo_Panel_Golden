@@ -20,7 +20,16 @@
     }
 
     .body-sidebar{
-        height: max-content;
+        height: calc(100% - var(--height-sidebar-header));
         overflow: auto;
+        
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb{
+            background: var(--color-base-dark-sidebar);
+            border-radius: 5px;
+        }
     }
 }

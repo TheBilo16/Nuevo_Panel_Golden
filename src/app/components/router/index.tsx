@@ -1,4 +1,4 @@
-import React, { useContext, Fragment } from "react";
+import React, { useContext, FunctionComponent } from "react";
 
 //Components
 import TemplateBars from "../layers/TemplateBars";
@@ -7,15 +7,18 @@ import RoutesNotAuth from "./subcomponents/RoutesNotAuth";
 
 //Extra
 import { AccountContext } from "../../context/accountContext";
+import { BrowserRouter } from "react-router-dom";
 
-function Router() : JSX.Element {
+const Router : FunctionComponent = () : JSX.Element => {
     const { userData } = useContext(AccountContext);
 
     if(!userData) return <RoutesNotAuth />
 
-    return <TemplateBars>
-        <RoutesAuth />
-    </TemplateBars>
+    return <BrowserRouter>
+        <TemplateBars>
+            <RoutesAuth />
+        </TemplateBars>
+    </BrowserRouter>
 }
 
 export default Router;
