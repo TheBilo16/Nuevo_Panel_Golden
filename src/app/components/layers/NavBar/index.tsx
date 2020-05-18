@@ -3,7 +3,7 @@ import "./index.scss";
 
 function NavBar() : JSX.Element{
     return <div className="navbar">
-
+        
     </div>
 }
 

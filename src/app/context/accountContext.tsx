@@ -3,7 +3,7 @@ import { getTokenLocalStorage } from "../services/account";
 
 interface IProps {}
 interface IState {
-    userData? : object,
+    userData? : any,
     isLoadingInformation? : boolean
 }
 
@@ -13,7 +13,7 @@ class AccountProvider extends Component<IProps,IState>{
     constructor(props : IProps){
         super(props);
         this.state = {
-            userData : {},
+            userData : null,
             isLoadingInformation : true
         }
     }

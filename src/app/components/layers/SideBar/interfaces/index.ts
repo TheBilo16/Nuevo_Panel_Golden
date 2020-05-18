@@ -11,7 +11,6 @@ interface Ilist {
 }
 
 interface Iprops {
-    children? : JSX.Element,
     list : Ilist
 }
 

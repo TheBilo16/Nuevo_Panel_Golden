@@ -1,40 +1,14 @@
-import React, { createRef, useEffect, useState, Fragment } from "react";
+import React, { Fragment, FunctionComponent } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import "./index.scss";
 
-//Interfaces
+//Components
 import { Iprops } from "../../interfaces";
+import useItemSideBar from "../../../../../hooks/useItemSideBar";
 
-function Item(props : Iprops) : JSX.Element {
-    //ref
-    const itemHide = createRef<HTMLUListElement>();
-
-    //hooks
-    const [classItem,setClassItem] = useState<string>("");
-    const [loading,setLoading] = useState<boolean>(true);
-    const [multiple,setMultiple] = useState<boolean>(false);
-
-    //destructuring
-    const { list } = props;
-    const { type , icon , title, subitems } = list;
-
-    //functions
-    const activateItemHide = () : void => {
-        let element = itemHide.current;
-        if(element?.classList.contains("hide")) 
-            element?.classList.remove("hide");
-        else 
-            element?.classList.add("hide");            
-    }
-
-    //ComponentDidMount
-    useEffect(() => {
-        if(type == "normal") setMultiple(false);
-        else if(type == "multiple") setMultiple(true);
-        
-        setClassItem(type + "-list");
-        setLoading(false);
-    }, []);
+const Item : FunctionComponent<Iprops> = props => {
+    const { multiple, loading, classItem, activateItemHide, refItemHide } = useItemSideBar(props);
+    const { icon , title, subitems } = props.list;
 
     if(loading) return <Fragment></Fragment>
 
@@ -51,7 +25,7 @@ function Item(props : Iprops) : JSX.Element {
         </div>
 
         { multiple ? 
-            <ul className="sub-item hide" ref={itemHide}>
+            <ul className="sub-item hide" ref={refItemHide}>
                 {
                     subitems?.map((v,i) => 
                         <li className="sub-item-list" key={i}>

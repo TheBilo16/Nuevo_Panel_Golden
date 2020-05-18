@@ -1,20 +1,21 @@
 import React, { useContext, Fragment } from "react";
-import { BrowserRouter , Route , Switch } from "react-router-dom";
 
-//Screens
-import PageNotFound from "../screens/PageNotFound";
+//Components
+import TemplateBars from "../layers/TemplateBars";
+import RoutesAuth from "./subcomponents/RoutesAuth";
+import RoutesNotAuth from "./subcomponents/RoutesNotAuth";
 
 //Extra
-import TemplateBars from "../layers/TemplateBars";
+import { AccountContext } from "../../context/accountContext";
 
 function Router() : JSX.Element {
-    
-    return <BrowserRouter>
-        <Switch>
-            <Route exact path="/" component={TemplateBars} />
-            <Route path="*" component={PageNotFound} />
-        </Switch>
-    </BrowserRouter>
+    const { userData } = useContext(AccountContext);
+
+    if(!userData) return <RoutesNotAuth />
+
+    return <TemplateBars>
+        <RoutesAuth />
+    </TemplateBars>
 }
 
 export default Router;

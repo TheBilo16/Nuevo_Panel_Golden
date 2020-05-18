@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import useLogin from "../../../hooks/useLogin";
 
-function Login() : JSX.Element{
+const Login : FunctionComponent = (props) : JSX.Element =>{
     const { LoginFormSubmit, changePassword, changeUsername } = useLogin();
 
     return <div>
