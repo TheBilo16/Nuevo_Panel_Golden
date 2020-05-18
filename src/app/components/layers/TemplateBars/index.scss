@@ -4,13 +4,14 @@
     display: flex;
 
     .container-page{
-        width: 100%;
+        width: calc(100% - var(--width-sidebar));
         height: 100%;
 
         .page {
             width: 100%;
             height: calc(100% - var(--height-sidebar-header));
             overflow: auto;
+            background-color: rgb(240,240,240);
         }
     }
 }

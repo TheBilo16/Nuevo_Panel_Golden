@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node .",
     "dev": "concurrently \"nodemon .\" \"webpack -w -d\"",
-    "build" : "webpack -p"
+    "build": "webpack -p"
   },
   "keywords": [],
   "author": "",

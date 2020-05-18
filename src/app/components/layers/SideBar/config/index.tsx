@@ -7,14 +7,8 @@ const configSideBar : Ilist[] = [
     {
         type : "normal",
         icon : <AiOutlineHome />,
-        title : "Inicio",
+        title : "Dashboard",
         link : "/"
-    },
-    {
-        type : "normal",
-        icon : <TiCogOutline />,
-        title : "Configuracion",
-        link : ""
     },
     {
         type : "multiple",
@@ -32,7 +26,13 @@ const configSideBar : Ilist[] = [
                 link : "/"
             }
         ]
-    }
+    },
+    {
+        type : "normal",
+        icon : <TiCogOutline />,
+        title : "Configuracion",
+        link : ""
+    }   
 ]
 
 export default configSideBar;

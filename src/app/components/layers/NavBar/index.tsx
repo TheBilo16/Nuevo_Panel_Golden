@@ -1,5 +1,6 @@
-import React , { useState, createRef } from "react";
+import React from "react";
 import { FaPortrait } from "react-icons/fa";
+import { IoIosKeypad, IoIosNotificationsOutline } from "react-icons/io";
 import "./index.scss";
 
 //Extra
@@ -11,10 +12,10 @@ function NavBar() : JSX.Element{
     return <div className="navbar">
         <section className="navbar-options"></section>
         <section className="user-options">
-            <div className="image-admin">
-                <div className="image" onClick={onPress}>
-                    {/* <img src="" alt=""/> */}
-                </div>
+            <div className="icon-menu">
+                <span className="icon" onClick={onPress}>
+                    <IoIosKeypad />
+                </span>
                 <ul ref={refElementHide} className="list-image-option hide">
                     <li className="image-option">
                         <span><FaPortrait /></span>
@@ -29,6 +30,17 @@ function NavBar() : JSX.Element{
                         <span>Option</span>
                     </li>
                 </ul>
+            </div>
+            <div className="icon-menu">
+                <span className="icon">
+                    <IoIosNotificationsOutline />
+                </span>
+            </div>
+            <div className="image-admin">
+                <div className="image">
+                    <img className="img" src="https://acquisio.com/blog/wp-content/uploads/2015/12/alevy_avatar_1450133221.jpg" alt="face-user"/>
+                    <div className="point-connected"></div>
+                </div>
             </div>
         </section>
     </div>
